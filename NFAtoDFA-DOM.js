@@ -71,70 +71,6 @@ $(document).ready(function () {
             $(this).remove();
         });
 
-        /*clone.find(".current-state-input").val('q0');
-        clone.find(".input-symbol").val('');
-        clone.find(".next-states").val('q1');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q1');
-        clone.find(".input-symbol").val('a');
-        clone.find(".next-states").val('q1');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q1');
-        clone.find(".input-symbol").val('a');
-        clone.find(".next-states").val('q2');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q2');
-        clone.find(".input-symbol").val('b');
-        clone.find(".next-states").val('q3');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q3');
-        clone.find(".input-symbol").val('');
-        clone.find(".next-states").val('q1');
-        transitionsDiv.append(clone);
-
-        clone.find(".current-state-input").val('q0');
-        clone.find(".input-symbol").val('a');
-        clone.find(".next-states").val('q2');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q0');
-        clone.find(".input-symbol").val('b');
-        clone.find(".next-states").val('q1');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q1');
-        clone.find(".input-symbol").val('a');
-        clone.find(".next-states").val('q1');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q1');
-        clone.find(".input-symbol").val('a');
-        clone.find(".next-states").val('q2');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q1');
-        clone.find(".input-symbol").val('b');
-        clone.find(".next-states").val('q2');
-        transitionsDiv.append(clone);
-
-        clone = clone.clone(true);
-        clone.find(".current-state-input").val('q2');
-        clone.find(".input-symbol").val('');
-        clone.find(".next-states").val('q0');
-        transitionsDiv.append(clone);*/
-
         clone.find(".current-state-input").val('q0');
         clone.find(".input-symbol").val('a');
         clone.find(".next-states").val('q1');
@@ -243,31 +179,6 @@ $(document).ready(function () {
         console.log(dotStr);
         $("#current-dfa-minimized").show();
         d3.select("#current-dfa-minimized").graphviz().zoom(false).renderDot(dotStr);
-
-    });
-
-    $("#step-div").on("click", "button", function () {
-
-        let step = $(this).data('step-number');
-
-        $(this).parent().find("button").removeClass("active");
-        $(this).addClass("active");
-
-        let user_input = fetchUserInput();
-        let dfa = generateDFA(new NFA(user_input.initialState, user_input.finalStates, user_input.states, user_input.alphabet, user_input.transitions), step);
-        let dotStr = dfa.toDotString();
-
-        d3.select("#current-dfa").graphviz().zoom(false).renderDot(dotStr);
-
-        if (step !== (LAST_COMPLETED_STEP_COUNT + 1)) {
-
-            $("#current-dfa-minimized").hide();
-
-        } else {
-
-            $("#current-dfa-minimized").show();
-
-        }
 
     });
 

@@ -39,25 +39,14 @@
     <![endif]-->
 </head>
 
-<body>
+<body style="background-color: grey; color: white;">
 <div class="navbar navbar-default">
     <h3 class="navbar-text">Automata NFA to DFA Converter</h3>
 </div>
 <div class="container">
 
     <h1>NFA Input</h1>
-    <p class="instructions">Input your non-deterministic automata (NFA) transitions here, then define the final states
-        and initial state.</p>
-    <ul class="instructions-list">
-        <li>The left-hand current state of each transition must be filled in.</li>
-        <li>[ &lambda; ] - An empty text field corresponds to lambda (or epsilon).</li>
-        <li>The finite set of states ( <i>Q</i> ) and the alphabet ( &Sigma; ) will be generated automatically based on
-            the transitions entered.
-        </li>
-        <li>Inputs are case-sensitive and whitespace is not ignored.</li>
-        <li>All entries should be delimited by a comma, if permitted.</li>
-    </ul>
-    <button type="button" class="btn btn-danger" id="resetBtn" title="Reset the current NFA">Reset</button>
+    <button type="button" class="btn btn-primary" id="resetBtn" title="Reset the current NFA">Reset</button>
     <button type="button" class="btn btn-info" id="exampleBtn" title="Fill in an example NFA">Example</button>
     <form class="form-horizontal" id="nfa" role="form">
         <form class="form-horizontal">
@@ -85,10 +74,9 @@
     <div class="clearfix"></div>
 
     <div class="col-xs-6 new-production">
-        <button id="new-transition" type="button" class="btn btn-default btn-lg btn-block"
+        <button id="new-transition" type="button" class="btn btn-default btn-lg"
                 title="Create a new transition">
-            <span class="glyphicon glyphicon-plus"></span> &nbsp;Click here or press &quot;Enter&quot; for a new
-            transition
+            <span class="glyphicon glyphicon-plus"></span>
         </button>
     </div>
 
@@ -114,13 +102,6 @@
     <div id="current-dfa-minimized"></div>
 
     <div class="clearfix"></div>
-    <h1>About</h1>
-    <ul>
-        <li>Created by Jordano Baer and John Cameron. University of South Florida, 2019.</li>
-        <li>DFA Visualization is made possible with the <a href="https://github.com/mdaines/viz.js" target="_blank">Viz.js</a>
-            library.
-        </li>
-    </ul>
 </div>
 </body>
 
